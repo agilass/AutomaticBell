@@ -43,11 +43,11 @@ void setup()
 }
 
 void loop()
-{
+{//start loop
     // Display time on the right conrner upper line
     rtc.refresh();
     lcd.clear();
-    Hour = rtc.hour();
+    Hour = rtc.hour()-1;
     Min = rtc.minute();
     Sec = rtc.second();
     Day = rtc.day();
@@ -72,7 +72,7 @@ void loop()
     
     jour_son(Day_of_week);
     delay(1000);
-}
+}//end loop
 
  void son(int H,int M){
   if (H== Hour && M== Min && Sec<= 8){
@@ -84,44 +84,106 @@ void loop()
     }
     }
 
-    void jour_son(int jour){
+//     void jour_son(int jour){
+//       if(jour == 0){  // dimanche 
+//       }
+//       else if(jour == 1){       // lundi
+// //        son(12,58); // _________TEST___________________
+//         son(13,45);
+//         son(13,55);
+//         son(14,55);
+//         son(15,55);
+//         son(16,5);
+//         son(17,0);
+//         son(18,0); 
+//         }
+//       else if(jour == 5 || jour == 6){ // vendredi et samdi
+//         son(8,15);
+//         son(8,25);
+//         son(9,25);
+//         son(10,25);
+//         son(10,35);
+//         son(11,30);
+//         son(12,30);
+//         }
+//         else{
+//         son(8,15);
+//         son(8,25);
+//         son(9,25);
+//         son(10,25);
+//         son(10,35);
+//         son(11,30);
+//         son(12,30);
+// //     ===========================
+//         son(13,45);
+//         son(13,55);
+//         son(14,55);
+//         son(15,55);
+//         son(16,5);
+//         son(17,0);
+//         son(18,0); 
+//           }
+//---------------------------------------------------ramadane--------------------------------------------------------------
+          void jour_son(int jour){//start jour_son
       if(jour == 0){  // dimanche 
       }
       else if(jour == 1){       // lundi
 //        son(12,58); // _________TEST___________________
-        son(13,45);
-        son(13,55);
-        son(14,55);
-        son(15,55);
-        son(16,5);
-        son(17,0);
-        son(18,0); 
-        }
-      else if(jour == 5 || jour == 6){ // vendredi et samdi
-        son(8,15);
-        son(8,25);
-        son(9,25);
-        son(10,25);
-        son(10,35);
-        son(11,30);
+        son(12,15);
         son(12,30);
+        son(13,15);
+        son(13,20);
+        son(14,5);
+        son(14,15);
+        son(15,0);
+        son(15,5);
+        son(15,50); 
         }
-        else{
+      else if(jour == 5){ // vendredi 
         son(8,15);
+        son(8,30);
+        son(9,15);
+        son(9,20);
+        son(10,5);
+        son(10,15);
+        son(11,0);
+        son(11,5);
+        son(11,50);
+        }
+      else if(jour == 6){ //  samdi
         son(8,25);
+        son(8,40);
         son(9,25);
+        son(9,30);
+        son(10,15);
         son(10,25);
-        son(10,35);
-        son(11,30);
-        son(12,30);
+        son(11,10);
+        son(11,15);
+        son(12,0);
+        }
+
+      else{
+        son(8,25);
+        son(8,40);
+        son(9,25);
+        son(9,30);
+        son(10,15);
+        son(10,25);
+        son(11,10);
+        son(11,15);
+        son(12,0);
 //     ===========================
-        son(13,45);
-        son(13,55);
-        son(14,55);
-        son(15,55);
-        son(16,5);
-        son(17,0);
-        son(18,0); 
+        son(12,15);
+        son(12,30);
+        son(13,15);
+        son(13,20);
+        son(14,5);
+        son(14,15);
+        son(15,0);
+        son(15,5);
+        son(15,50); 
           }
-      }
+          }//end jour_son
+      
+      
       
